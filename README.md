@@ -27,5 +27,5 @@ The Laravel + React starter kit is open-sourced software licensed under the MIT 
 ```
 new branch
 git checkout -b main
-
+git status
 ```
