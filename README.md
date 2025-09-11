@@ -24,8 +24,16 @@ In order to ensure that the Laravel community is welcoming to all, please review
 
 The Laravel + React starter kit is open-sourced software licensed under the MIT license.
 
-## commande remplacer dans le fichier composer.json
-"dev": [
-    "Composer\\Config::disableProcessTimeout",
-    "npx concurrently -c \"#93c5fd,#c4b5fd,#fb7185,#fdba74\" \"php artisan serve\" \"php artisan queue:listen --tries=1\" \"php artisan pail --timeout=0\" \"npm run dev\" --names=server,queue,logs,vite --kill-others"
-],
+## comande a executer apres avoir cloner le depot github
+# 1. Installer les dépendances PHP
+composer install
+
+# 2. Installer les dépendances JS (React, Vite, Tailwind…)
+npm install
+
+# 3. Créer ton fichier d'environnement
+cp .env.example .env
+
+# 4. Générer la clé de l'application
+php artisan key:generate
+
