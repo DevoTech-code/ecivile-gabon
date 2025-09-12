@@ -17,7 +17,7 @@ class HopitalController extends Controller
      */
     public function index()
     {
-        $hopitaux = Hopital::with('user')->paginate(10);
+        $hopitaux = Hopital::with('user')->paginate(30);
 
         return Inertia::render('Admin/Hopitaux/Index', [
             'hopitaux' => $hopitaux,
@@ -133,10 +133,10 @@ class HopitalController extends Controller
      */
     public function show(Hopital $hopital): \Inertia\Response
     {
-        $hopital->load(['agents', 'user', 'mairie']); 
+        $hopital->load(['agents', 'user', 'mairie']);
 
         return Inertia::render('Admin/Hopitaux/Show', [
-            'hopital' => $hopital, 
+            'hopital' => $hopital,
             'agents' => $hopital->agents
         ]);
     }

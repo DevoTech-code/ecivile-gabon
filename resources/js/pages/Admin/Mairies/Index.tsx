@@ -119,7 +119,7 @@ export default function Index({ mairies, flash }) {
                                     <TableRow>
                                         <TableHead>Nom</TableHead>
                                         <TableHead>Email</TableHead>
-                                        <TableHead>Adresse</TableHead>
+                                        <TableHead>Date de création</TableHead>
                                         <TableHead className="text-right">Actions</TableHead>
                                     </TableRow>
                                 </TableHeader>
@@ -129,7 +129,7 @@ export default function Index({ mairies, flash }) {
                                             <TableRow key={mairie.id}>
                                                 <TableCell className="font-medium">{mairie.nom}</TableCell>
                                                 <TableCell>{mairie.email}</TableCell>
-                                                <TableCell>{mairie.adresse_complete}</TableCell>
+                                                <TableCell>{new Date(mairie.created_at).toLocaleDateString()}</TableCell>
                                                 <TableCell className="text-right">
                                                     <div className="flex justify-end gap-2">
                                                         <Button variant="ghost" size="sm" asChild>
@@ -167,8 +167,8 @@ export default function Index({ mairies, flash }) {
                                             <CardContent className="flex h-full flex-col justify-between">
                                                 <div>
                                                     <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{mairie.nom}</h3>
-                                                    <p className="text-gray-500">{mairie.email}</p>
-                                                    <p className="text-gray-500">{mairie.adresse_complete}</p>
+                                                    <p className="text-gray-500">Adresse Email: {mairie.email}</p>
+                                                    <p className="text-gray-500">Créé le : {new Date(mairie.created_at).toLocaleDateString()}</p>
                                                 </div>
                                                 <div className="mt-2 flex justify-end gap-2">
                                                     <Button variant="ghost" size="sm" asChild>
