@@ -1,19 +1,20 @@
+import { Button } from '@/components/ui/button';
 import { PlaceholderPattern } from '@/components/ui/placeholder-pattern';
 import AppLayout from '@/layouts/app-layout';
 import { type BreadcrumbItem, type NavItem } from '@/types';
-import { Head } from '@inertiajs/react';
+import { Head, Link } from '@inertiajs/react';
 import { BookOpen, CircleUserIcon, Folder, Hospital, Landmark, LayoutGrid, MapPin, Plus } from 'lucide-react';
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
-        title: 'Dashboard Admin',
+        title: 'Tableau de bord Admin',
         href: '/dashboard',
     },
 ];
 
 const mainNavItems: NavItem[] = [
     {
-        title: 'Dashboard',
+        title: 'Tableau de bord',
         href: route('dashboard'),
         icon: LayoutGrid,
     },
@@ -77,6 +78,37 @@ export default function Dashboard({ mairiesCount, hopitauxCount, usersCount, rec
                     <StateCard icon={Hospital} title="Hopitaux" value={hopitauxCount} bgColors="bg-yellow-500" />
                     <StateCard icon={CircleUserIcon} title="Utilisateurs" value={usersCount} bgColors="bg-green-500" />
                 </div>
+
+                <div className="h-auto overflow-hidden rounded-xl border border-sidebar-border/70 p-4 md:min-h-min dark:border-sidebar-border">
+                    <h3 className="mb-4 text-lg font-semibold text-gray-800">Faire une action</h3>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                        <Link href={route('admin.mairies.create')}>
+                            <Button className='w-full'>
+                                <Plus />
+                                Créer une nouvelle mairies
+                            </Button>
+                        </Link>
+                        <Link href={route('admin.mairies.index')}>
+                            <Button className='w-full border' variant='ghost'>
+                                <Plus />
+                                Gestionnaire des mairies
+                            </Button>
+                        </Link>
+                        <Link href={route('admin.hopitaux.create')}>
+                            <Button className='w-full'>
+                                <Plus />
+                                Créer un nouvel hopital
+                            </Button>
+                        </Link>
+                        <Link href={route('admin.hopitaux.index')}>
+                            <Button className='w-full border' variant='ghost'>
+                                <Plus />
+                                Gestionnaire des hopitaux
+                            </Button>
+                        </Link>
+                    </div>
+                </div>
+
                 <div className="relative min-h-[100vh] flex-1 overflow-hidden rounded-xl border border-sidebar-border/70 p-4 md:min-h-min dark:border-sidebar-border">
                     <h3 className="mb-4 text-lg font-semibold text-gray-800">Entités récentes</h3>
                     <ul>

@@ -10,30 +10,30 @@ import { LayoutGrid } from 'lucide-react';
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
-        title: 'Appearance settings',
+        title: "Paramètres de l'apparence",
         href: '/settings/appearance',
     },
 ];
 
 const mainNavItems = [
     {
-        title: 'Dashboard',
+        title: 'Tableau de bord',
         href: route('dashboard'),
         icon: LayoutGrid,
     },
 
     {
-        title: 'Profile',
+        title: 'Mon profil',
         href: '/settings/profile',
         icon: null,
     },
     {
-        title: 'Password',
+        title: 'Mot de passe',
         href: '/settings/password',
         icon: null,
     },
     {
-        title: 'Appearance',
+        title: 'Apparence',
         href: '/settings/appearance',
         icon: null,
     },
@@ -46,7 +46,7 @@ export default function Appearance() {
 
             <SettingsLayout>
                 <div className="space-y-6">
-                    <HeadingSmall title="Appearance settings" description="Update your account's appearance settings" />
+                    <HeadingSmall title="Paramètres de l'apparence" description="Mettre à jour les paramètres d'apparence de votre compte" />
                     <AppearanceTabs />
                 </div>
             </SettingsLayout>

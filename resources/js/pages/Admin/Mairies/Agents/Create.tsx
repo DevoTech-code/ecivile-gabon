@@ -10,14 +10,14 @@ import { type BreadcrumbItem, type NavItem } from '@/types';
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
-        title: 'Dashboard Admin',
+        title: 'Tableau de bord Admin',
         href: '/dashboard',
     },
 ];
 
 const mainNavItems: NavItem[] = [
     {
-        title: 'Dashboard',
+        title: 'Tableau de bord',
         href: route('dashboard'),
         icon: LayoutGrid,
     },

@@ -11,14 +11,14 @@ import { toast, Toaster } from 'sonner';
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
-        title: 'Dashboard Admin',
+        title: 'Tableau de bord Admin',
         href: '/dashboard',
     },
 ];
 
 const mainNavItems: NavItem[] = [
     {
-        title: 'Dashboard',
+        title: 'Tableau de bord',
         href: route('dashboard'),
         icon: LayoutGrid,
     },
@@ -87,8 +87,8 @@ export default function Index({ mairies, flash }) {
         <AppLayout breadcrumbs={breadcrumbs} mainNavItems={mainNavItems} footerNavItems={footerNavItems}>
             <Head title="Gestion des Mairies" />
 
-            <div className="flex h-full flex-1 flex-col gap-4 overflow-x-auto rounded-xl p-4">
-                <div className="h-[200px] flex-1 overflow-hidden rounded-xl border border-sidebar-border/70 md:min-h-min dark:border-sidebar-border p-4">
+            <div className="flex flex-1 flex-col gap-4 overflow-x-auto rounded-xl p-4">
+                <div className="h-auto overflow-hidden rounded-xl border border-sidebar-border/70 md:min-h-min dark:border-sidebar-border p-4">
                      <h3 className="mb-4 text-lg font-semibold text-gray-800">Gestionnaires des mairies</h3>
                     <Link href={route('admin.mairies.create')}>
                         <Button>
@@ -111,7 +111,7 @@ export default function Index({ mairies, flash }) {
                     </div>
 
                     {/* Conteneur principal */}
-                    <div className="min-h-[100vh] overflow-x-auto rounded bg-white shadow dark:bg-gray-800">
+                    <div className="relative min-h-[100vh] flex-1 overflow-hidden rounded-xl border border-sidebar-border/70 md:min-h-min dark:border-sidebar-border">
                         {/* Table */}
                         {view === 'table' && (
                             <Table>
@@ -160,10 +160,10 @@ export default function Index({ mairies, flash }) {
 
                         {/* Cards */}
                         {view === 'card' && (
-                            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
+                            <div className="grid grid-cols-1 gap-2 p-4 sm:grid-cols-2 ">
                                 {mairiesData.length > 0 ? (
                                     mairiesData.map((mairie) => (
-                                        <Card key={mairie.id} className="shadow-sm">
+                                        <Card key={mairie.id}>
                                             <CardContent className="flex h-full flex-col justify-between">
                                                 <div>
                                                     <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{mairie.nom}</h3>
