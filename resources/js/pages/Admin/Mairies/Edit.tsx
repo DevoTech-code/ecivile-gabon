@@ -206,7 +206,7 @@ export default function Edit({ mairie }) {
                                     communes.find((c) => c.id.toString() === data.commune_id)?.nom || ''
                                 } - ${arrondissements.find((a) => a.id.toString() === data.arrondissement_id)?.nom || ''}`}
                                 readOnly
-                                className="mt-1 block w-full bg-gray-100"
+                                className="mt-1 block w-full bg-gray-100 dark:bg-gray-800"
                             />
                         </div>
 

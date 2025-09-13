@@ -201,7 +201,7 @@ export default function Create() {
                                     communes.find((c) => c.id == data.commune_id)?.nom || 'N/A'
                                 },  ${arrondissements.find((a) => a.id == data.arrondissement_id)?.nom || 'N/A'}`}
                                 readOnly
-                                className="mt-1 block w-full bg-gray-100"
+                                className="mt-1 block w-full bg-gray-100 dark:bg-gray-800"
                             />
                         </div>
 

@@ -89,7 +89,7 @@ export default function Index({ mairies, flash }) {
 
             <div className="flex flex-1 flex-col gap-4 overflow-x-auto rounded-xl p-4">
                 <div className="h-auto overflow-hidden rounded-xl border border-sidebar-border/70 md:min-h-min dark:border-sidebar-border p-4">
-                     <h3 className="mb-4 text-lg font-semibold text-gray-800">Gestionnaires des mairies</h3>
+                     <h3 className="mb-4 text-lg font-semibold text-gray-800 dark:text-white">Gestionnaires des mairies</h3>
                     <Link href={route('admin.mairies.create')}>
                         <Button>
                             <Plus/>
@@ -99,7 +99,7 @@ export default function Index({ mairies, flash }) {
                 </div>
                 <div className='space-y-2'>
                     <div className="flex flex-wrap items-center justify-between">
-                        <h3 className="text-lg font-semibold text-gray-800">Liste des mairies</h3>
+                        <h3 className="text-lg font-semibold text-gray-800 dark:text-white">Liste des mairies</h3>
                         <div className="flex flex-wrap gap-2">
                             <Button variant={view === 'table' ? 'default' : 'outline'} size="icon" onClick={() => setView('table')}>
                                 <TableIcon className="h-4 w-4" />
@@ -111,11 +111,11 @@ export default function Index({ mairies, flash }) {
                     </div>
 
                     {/* Conteneur principal */}
-                    <div className="relative min-h-[100vh] flex-1 overflow-hidden rounded-xl border border-sidebar-border/70 md:min-h-min dark:border-sidebar-border">
+                    <div className="relative min-h-screen flex-1 overflow-hidden rounded-xl border border-sidebar-border/70 md:min-h-min dark:border-sidebar-border">
                         {/* Table */}
                         {view === 'table' && (
                             <Table>
-                                <TableHeader className="bg-gray-100">
+                                <TableHeader>
                                     <TableRow>
                                         <TableHead>Nom</TableHead>
                                         <TableHead>Email</TableHead>

@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 import { CheckCircle, Clock, FileText, Shield } from 'lucide-react';
 
 export default function Welcome() {
-    const { auth } = usePage<SharedData>().props
+    const { auth } = usePage<SharedData>().props;
     const features = [
         {
             icon: <FileText className="h-12 w-12 text-primary" />,
@@ -69,14 +69,16 @@ export default function Welcome() {
                             </div>
                             <span className="text-xl font-semibold text-primary">eCivile Gabon</span>
                         </div>
-                        <div className='flex items-center space-x-4'>
-                            <div className='hidden md:flex items-center space-x-6 text-sm text-gray-600'>
-                                <a href="#features" className='underline hover:text-black transition-colors'>Pourquoi nous choisir ?</a>
-                                <a href="#how-it-works"className='hover:text-black transition-colors'>Comment ça marche</a>
-                                <Link
-                                    href={route('contact')}
-                                    className='hover:text-black transition-colors'>
-                                        Nous contacter
+                        <div className="flex items-center space-x-4">
+                            <div className="hidden items-center space-x-6 text-sm text-gray-600 md:flex">
+                                <a href="#features" className="underline transition-colors hover:text-black">
+                                    Pourquoi nous choisir ?
+                                </a>
+                                <a href="#how-it-works" className="transition-colors hover:text-black">
+                                    Comment ça marche
+                                </a>
+                                <Link href={route('contact')} className="transition-colors hover:text-black">
+                                    Nous contacter
                                 </Link>
                             </div>
                             <div className="flex items-center gap-4">
@@ -179,7 +181,7 @@ export default function Welcome() {
             </section>
 
             {/* Features Section */}
-            <section className="bg-white py-20" id='features'>
+            <section className="bg-white py-20" id="features">
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <motion.div
                         initial={{ y: 50, opacity: 0 }}
@@ -217,7 +219,7 @@ export default function Welcome() {
             </section>
 
             {/* How it works */}
-            <section className="bg-gray-50 py-20" id='how-it-works'>
+            <section className="bg-gray-50 py-20" id="how-it-works">
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                     <motion.div
                         initial={{ y: 50, opacity: 0 }}

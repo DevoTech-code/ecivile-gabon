@@ -54,7 +54,7 @@ export default function Welcome({ auth }) {
                                 <a href={route('home') + '#how-it-works'} className="transition-colors hover:text-black">
                                     Comment ça marche
                                 </a>
-                                <Link href={route('contact')} className="underline text:black transition-colors hover:text-black">
+                                <Link href={route('contact')} className="text:black underline transition-colors hover:text-black">
                                     Nous contacter
                                 </Link>
                             </div>
@@ -94,7 +94,7 @@ export default function Welcome({ auth }) {
                 </div>
 
                 {/* Formulaire de contact et informations */}
-                <div className="bg-white py-20 dark:bg-gray-950 rounded-sm shadow mt-8">
+                <div className="mt-8 rounded-sm bg-white py-20 shadow dark:bg-gray-950">
                     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                         <div className="grid gap-12 md:grid-cols-2">
                             {/* Formulaire de contact */}

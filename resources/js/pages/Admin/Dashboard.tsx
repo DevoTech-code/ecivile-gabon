@@ -80,7 +80,7 @@ export default function Dashboard({ mairiesCount, hopitauxCount, usersCount, rec
                 </div>
 
                 <div className="h-auto overflow-hidden rounded-xl border border-sidebar-border/70 p-4 md:min-h-min dark:border-sidebar-border">
-                    <h3 className="mb-4 text-lg font-semibold text-gray-800">Faire une action</h3>
+                    <h3 className="mb-4 text-lg font-semibold text-gray-800 dark:text-white">Faire une action</h3>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                         <Link href={route('admin.mairies.create')}>
                             <Button className='w-full'>
@@ -89,7 +89,7 @@ export default function Dashboard({ mairiesCount, hopitauxCount, usersCount, rec
                             </Button>
                         </Link>
                         <Link href={route('admin.mairies.index')}>
-                            <Button className='w-full border' variant='ghost'>
+                            <Button className='w-full border dark:border-white ' variant='ghost'>
                                 <Plus />
                                 Gestionnaire des mairies
                             </Button>
@@ -101,7 +101,7 @@ export default function Dashboard({ mairiesCount, hopitauxCount, usersCount, rec
                             </Button>
                         </Link>
                         <Link href={route('admin.hopitaux.index')}>
-                            <Button className='w-full border' variant='ghost'>
+                            <Button className='w-full border dark:border-white' variant='ghost'>
                                 <Plus />
                                 Gestionnaire des hopitaux
                             </Button>
@@ -109,15 +109,15 @@ export default function Dashboard({ mairiesCount, hopitauxCount, usersCount, rec
                     </div>
                 </div>
 
-                <div className="relative min-h-[100vh] flex-1 overflow-hidden rounded-xl border border-sidebar-border/70 p-4 md:min-h-min dark:border-sidebar-border">
-                    <h3 className="mb-4 text-lg font-semibold text-gray-800">Entités récentes</h3>
+                <div className="relative min-h-[100vh] flex-1 overflow-hidden rounded-xl border border-sidebar-border/70 p-4 md:min-h-min dark:border-sidebar-border ">
+                    <h3 className="mb-4 text-lg font-semibold text-gray-800 dark:text-white">Entités récentes</h3>
                     <ul>
                         {recentEntities.length > 0 ? (
                             recentEntities.map((entity, index) => (
                                 <li key={index} className="py-4">
                                     <div className="flex items-center justify-between">
                                         <div className="min-w-0 flex-1">
-                                            <p className="truncate text-sm font-medium text-gray-900">{entity.nom}</p>
+                                            <p className="truncate text-sm font-medium text-gray-900 dark:text-white">{entity.nom}</p>
                                             <p className="flex items-baseline gap-1 truncate text-sm text-gray-500">
                                                 <MapPin size={14} />
                                                 {entity.adresse_complete || 'N/A'}

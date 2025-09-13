@@ -89,7 +89,7 @@ export default function Index({ hopitaux, flash }) {
 
             <div className="flex  flex-1 flex-col gap-4 overflow-x-auto rounded-xl p-4">
                 <div className="h-auto overflow-hidden rounded-xl border border-sidebar-border/70 p-4 md:min-h-min dark:border-sidebar-border">
-                    <h3 className="mb-4 text-lg font-semibold text-gray-800">Gestionnaires des hopitaux</h3>
+                    <h3 className="mb-4 text-lg font-semibold text-gray-800 dark:text-white">Gestionnaires des hopitaux</h3>
                     <Link href={route('admin.hopitaux.create')}>
                         <Button>
                             <Plus />
@@ -99,7 +99,7 @@ export default function Index({ hopitaux, flash }) {
                 </div>
                 <div className="space-y-2">
                     <div className="flex flex-wrap items-center justify-between">
-                        <h3 className="text-lg font-semibold text-gray-800">Liste des hopitaux</h3>
+                        <h3 className="text-lg font-semibold text-gray-800 dark:text-white">Liste des hopitaux</h3>
                         <div className="flex flex-wrap gap-2">
                             <Button variant={view === 'table' ? 'default' : 'outline'} size="icon" onClick={() => setView('table')}>
                                 <TableIcon className="h-4 w-4" />
@@ -115,7 +115,7 @@ export default function Index({ hopitaux, flash }) {
                         {/* Table */}
                         {view === 'table' && (
                             <Table>
-                                <TableHeader className="bg-gray-100">
+                                <TableHeader>
                                     <TableRow>
                                         <TableHead>Nom</TableHead>
                                         <TableHead>Email</TableHead>
