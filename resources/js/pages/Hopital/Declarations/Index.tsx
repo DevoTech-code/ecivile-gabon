@@ -16,7 +16,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 import AppLayout from '@/layouts/app-layout';
 import { type BreadcrumbItem, type NavItem } from '@/types';
 import { Head, Link, router, useForm } from '@inertiajs/react';
-import { BookOpen, Download, Edit2, Eye, Filter, Folder, LayoutGrid, List, Plus, Trash2 } from 'lucide-react';
+import { BookOpen, Download, Edit2, Eye, Filter, Folder, FolderPlus, LayoutGrid, List, Plus, Trash2 } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { toast, Toaster } from 'sonner';
 
@@ -34,7 +34,7 @@ const mainNavItems: NavItem[] = [
     {
         title: 'Liste des déclarations',
         href: route('hopital.declarations.index'),
-        icon: List,
+        icon: FolderPlus,
     },
 ];
 

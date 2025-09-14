@@ -7,7 +7,7 @@ import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import AppLayout from '@/layouts/app-layout';
 import { type BreadcrumbItem, type NavItem } from '@/types';
 import { Head, useForm } from '@inertiajs/react';
-import { BookOpen, Folder, LayoutGrid, List, Plus, Save } from 'lucide-react';
+import { BookOpen, Folder, FolderPlus, LayoutGrid, List, Plus, Save } from 'lucide-react';
 
 const mainNavItems: NavItem[] = [
     {
@@ -23,7 +23,7 @@ const mainNavItems: NavItem[] = [
     {
         title: 'Liste des déclarations',
         href: route('hopital.declarations.index'),
-        icon: List,
+        icon: FolderPlus,
     },
 ];
 

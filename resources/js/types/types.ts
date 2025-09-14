@@ -1,45 +1,53 @@
-import { LucideIcon } from 'lucide-react';
+export interface User {
+    id: number;
+    name: string;
+    email: string;
+    created_at: string;
+    updated_at: string;
+}
 
 export interface Mairie {
     id: number;
     nom: string;
-    description_courte: string | null;
-    adresse_complete: string;
-    telephone_principal: string;
     email: string;
-    region: string | null;
-    code_postal: string | null;
+    adresse_complete: string;
+    description_courte: string;
+    telephone_principal: string;
+    code_postal: string;
     user_id: number;
-    created_at: string;
-    updated_at: string;
+    province_id: number;
+    commune_id: number;
+    arrondissement_id: number;
 }
 
 export interface Hopital {
     id: number;
     nom: string;
-    description_courte: string | null;
-    type_etablissement: 'hopital_general' | 'clinique' | 'centre_medical' | 'hopital_specialise';
-    adresse_complete: string;
-    telephone_principal: string;
     email: string;
+    adresse_complete: string;
+    description_courte: string;
+    telephone_principal: string;
+    code_postal: string;
     user_id: number;
-    mairie_id: number;
-    created_at: string;
-    updated_at: string;
+    mairie_id: number
+
 }
 
-export interface User {
+export interface Province {
     id: number;
-    name: string;
-    email: string;
-    email_verified_at: string | null;
-    role: 'admin' | 'mairie' | 'hopital';
-    hopital_id: number | null;
-    mairie_id: number | null;
-    created_at: string;
-    updated_at: string;
-    hopital?: Hopital;
-    mairie?: Mairie;
+    nom: string;
+}
+
+export interface Commune {
+    id: number;
+    province_id: number;
+    nom: string;
+}
+
+export interface Arrondissement {
+    id: number;
+    commune_id: number;
+    nom: string;
 }
 
 export interface Declaration {
@@ -48,23 +56,23 @@ export interface Declaration {
     prenom_enfant: string;
     code_nuin: string;
     date_naissance: string;
-    sexe: 'masculin' | 'feminin';
+    sexe: string;
     lieu_naissance: string;
     nom_pere: string;
     prenom_pere: string;
-    profession_pere: string | null;
-    nationalite_pere: string | null;
+    profession_pere: string;
+    nationalite_pere: string;
     nom_mere: string;
     prenom_mere: string;
-    profession_mere: string | null;
-    nationalite_mere: string | null;
-    acte_naissance_pere: string | null;
-    acte_naissance_mere: string | null;
+    profession_mere: string;
+    nationalite_mere: string;
+    email_parent: string;
+    acte_naissance_pere: File | null;
+    acte_naissance_mere: File | null;
+    statut: string;
+    motif_rejet: string;
     agent_hopital_id: number;
+    agent_mairie_id: number;
     hopital_id: number;
     mairie_id: number;
-    created_at: string;
-    updated_at: string;
-    agentHopital?: User;
 }
-

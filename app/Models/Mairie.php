@@ -13,7 +13,6 @@ class Mairie extends Model
         'telephone_principal',
         'email',
         'code_postal',
-
         'user_id',
         'province_id',
         'commune_id',

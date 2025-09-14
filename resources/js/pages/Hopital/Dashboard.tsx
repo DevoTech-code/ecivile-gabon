@@ -21,7 +21,7 @@ const mainNavItems: NavItem[] = [
     {
         title: 'Liste des déclarations',
         href: route('hopital.declarations.index'),
-        icon: List,
+        icon: FolderPlus,
     },
 ];
 
@@ -92,6 +92,21 @@ export default function HopitalDashboard({ declarationsCount, newDeclarationsCou
                         bgColor="bg-gradient-to-br from-purple-500 to-indigo-500"
                     />
                 </div>
+                <div className='border rounded-md border-gray-200 p-4 space-y-4'> 
+                    <h2 className='text-xl text-gray-500'>Actions</h2>
+                    <div className="grid grid-cols-1 sm:grid-cols-3 space-x-2">
+                        <Link href={route('hopital.declarations.create')}>
+                            <Button className='w-full'>
+                                <Plus size={5} /> Faire une déclararation
+                            </Button>
+                        </Link>
+                        <Link href={route('hopital.declarations.index')}>
+                            <Button variant='outline' className='w-full'>
+                                <FolderPlus size={5} /> Voir la liste
+                            </Button>
+                        </Link>
+                    </div>
+                </div>
 
                 <div className="w-full">
                     <h2 className="mb-4 text-lg font-semibold text-gray-800">Déclarations récentes</h2>
@@ -113,9 +128,7 @@ export default function HopitalDashboard({ declarationsCount, newDeclarationsCou
                                     recentDeclarations.map((declaration) => (
                                         <TableRow key={declaration.id}>
                                             <TableCell>{declaration.code_nuin}</TableCell>
-                                            <TableCell>
-                                                {declaration.nom_enfant}
-                                            </TableCell>
+                                            <TableCell>{declaration.nom_enfant}</TableCell>
                                             <TableCell>{declaration.date_naissance}</TableCell>
                                             <TableCell>{declaration.agent}</TableCell>
                                             <TableCell>{declaration.created_at}</TableCell>

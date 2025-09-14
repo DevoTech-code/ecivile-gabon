@@ -58,6 +58,7 @@ const footerNavItems: NavItem[] = [
 ];
 
 export default function Create() {
+
     const { provinces, communes, arrondissements } = usePage().props;
 
     const { data, setData, post, processing, errors } = useForm({

@@ -4,7 +4,7 @@ import { Label } from '@/components/ui/label';
 import AppLayout from '@/layouts/app-layout';
 import { type BreadcrumbItem, type NavItem } from '@/types';
 import { Head, Link, useForm } from '@inertiajs/react';
-import { BookOpen, Download, Edit2, Folder, LayoutGrid, List, Plus, Send } from 'lucide-react';
+import { BookOpen, Download, Edit2, Folder, FolderPlus, LayoutGrid, List, Plus, Send } from 'lucide-react';
 
 const mainNavItems: NavItem[] = [
     {
@@ -20,7 +20,7 @@ const mainNavItems: NavItem[] = [
     {
         title: 'Liste des déclarations',
         href: route('hopital.declarations.index'),
-        icon: List,
+        icon: FolderPlus,
     },
 ];
 
